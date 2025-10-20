@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff8f0"/>
+      <stop offset="1" stop-color="#fff0d9"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)"/>
+  <g transform="translate(100,120)" font-family="Georgia, serif" fill="#b9863b">
+    <text x="0" y="40" font-size="38" font-weight="700">Gita Jewellers</text>
+    <text x="0" y="90" font-size="22" fill="#6b4b2b">Crafted heirlooms · Timeless elegance</text>
+  </g>
+  <circle cx="920" cy="200" r="140" fill="#f7e9d6" stroke="#b88633" stroke-width="6" opacity="0.95"/>
+  <g transform="translate(820,120)" fill="#b88633" opacity="0.95">
+    <path d="M60 10 C85 10,85 60,60 60 C35 60,35 10,60 10 Z"/>
+  </g>
+</svg>
