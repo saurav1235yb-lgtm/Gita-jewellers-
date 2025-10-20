@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Gita Jewellers</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY_HERE"); // Replace with your EmailJS public key
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Gita Jewellers</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p><strong>Address:</strong> 14/2/1 West Ghosh Para Road, Jagatdal</p>
+    <p><strong>Phone:</strong> +91 7278232514</p>
+    <form id="contact-form">
+      <label>Name:</label>
+      <input type="text" name="from_name" required>
+      
+      <label>Email:</label>
+      <input type="email" name="reply_to" required>
+      
+      <label>Message:</label>
+      <textarea name="message" required></textarea>
+      
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="status"></p>
+  </section>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      emailjs.sendForm("service_89lxvfm", "template_upx6qdh", this)
+        .then(() => {
+          document.getElementById("status").innerText = "✅ Message sent successfully!";
+          document.getElementsByName("from_name")[0].value = "";
+          document.getElementsByName("reply_to")[0].value = "";
+          document.getElementsByName("message")[0].value = "";
+        }, (err) => {
+          document.getElementById("status").innerText = "❌ Failed to send. Please try again.";
+          console.error("EmailJS Error:", err);
+        });
+    });
+  </script>
+
+  <footer>
+    <p>© 2025 Gita Jewellers. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
